@@ -12,7 +12,7 @@ function App() {
     { value: "", status: "" },
   ]);
   const [prev, setPrev] = useState({});
-  const [words, setWords] = useState({ 1: "mofdm", 2: "kc dks", 3: "klds" });
+  const [words, setWords] = useState({ 1: "", 2: "", 3: "" });
   const [visibility, setVisibility] = useState(false);
   const [won, setWon] = useState(false);
 
