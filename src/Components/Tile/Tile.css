@@ -1,0 +1,74 @@
+.card{
+    width: 30%;
+    height: 50px;
+    padding: 13px 17px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0px;
+    font-size: 0rem;
+    text-overflow: ellipsis;
+    border: 2px solid var(--voilet);
+    background: var(--voilet);
+    transform: rotateY(-180deg);
+}
+.card.active{
+    animation: .5s flip-open linear;
+    animation-fill-mode: forwards;
+    background: white;
+}
+
+.card.correct{
+    transform: rotateY(0deg);
+    font-size: 1.2rem;
+    background: var(--green);
+}
+.card.wrong{
+    transform: rotateY(0deg);
+    font-size: 1.2rem;
+    background: var(--red);
+    animation: 50ms linear .5s 10 alternate backwards shiver, 1s linear 1.2s 1 forwards flip-close;
+}
+@keyframes shiver {
+    0%{
+        transform: translateX(-6px);
+    }
+    100%{
+        transform: translateX(6px);
+    }
+}
+
+@keyframes flip-open {
+    0%{
+        transform: rotateY(-180deg);
+        font-size: 0rem;
+        background: var(--voilet);
+    }
+    49%{
+        transform: rotateY(-90deg);
+        font-size: 0rem;
+        background: var(--voilet);
+    }
+    100%{
+        transform: rotateY(0deg);
+        font-size: 1.2rem;
+    }
+}
+
+@keyframes flip-close {
+    0%{
+        transform: rotateY(0deg);
+        font-size: 1.2rem;
+    }
+    51%{
+        transform: rotateY(-90deg);
+        font-size: 0rem;
+        background: var(--voilet);
+    }
+    100%{
+        transform: rotateY(-180deg);
+        font-size: 0rem;
+        background: var(--voilet);
+    }
+}
