@@ -72,8 +72,34 @@ function App() {
     }
   };
 
+  const handleReset = () => {
+    setPrev({});
+    setTilesData([
+      { value: "", status: "" },
+      { value: "", status: "" },
+      { value: "", status: "" },
+      { value: "", status: "" },
+      { value: "", status: "" },
+      { value: "", status: "" },
+    ]);
+    setWords({ 1: "", 2: "", 3: "" });
+    setWon(false);
+    setVisibility(false);
+  };
+
   return (
     <div className="App">
+      <button
+        style={{
+          position: "absolute",
+          top: "10px",
+          right: "10px",
+          background: "var(--red)",
+        }}
+        onClick={() => handleReset()}
+      >
+        Reset Game
+      </button>
       <div className="header">
         <h1>A Memory Game</h1>
       </div>
@@ -113,7 +139,7 @@ function App() {
       {visibility && (
         <div className="gameBody">
           <div className="tiles">
-          <label htmlFor="">Click the tiles to flip.</label>
+            <label htmlFor="">Click the tiles to flip.</label>
             {tilesData.map((item, index) => {
               return (
                 <Tile
