@@ -113,6 +113,7 @@ function App() {
       {visibility && (
         <div className="gameBody">
           <div className="tiles">
+          <label htmlFor="">Click the tiles to flip.</label>
             {tilesData.map((item, index) => {
               return (
                 <Tile
