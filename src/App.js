@@ -27,7 +27,7 @@ function App() {
   }, [tilesData]);
 
   const handleNxtClick = () => {
-    if (words[1] === "" && words[2] === "" && words[3] === "") {
+    if (words[1] === "" || words[2] === "" || words[3] === "") {
       alert("Please enter all three words.");
       return;
     }
@@ -44,6 +44,7 @@ function App() {
   };
 
   const handleTileClick = (index) => {
+    setWon(false);
     if (prev.index === index || tilesData[index].status === "correct") return;
     const temp = tilesData;
     temp[index].status = "active";
